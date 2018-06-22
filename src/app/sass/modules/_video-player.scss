@@ -1,0 +1,181 @@
+section.video-player {
+    padding: 0 20px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 50px auto;
+    font-size: 1.2em;
+    line-height: 1.5;
+
+    @include full-block();
+
+    .video-wrapper {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+        margin-bottom: 20px;
+
+        @include full-block();
+
+        .play {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            cursor: pointer;
+
+            svg {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 62px;
+                height: 62px;
+                display: inline-block;
+
+                @include transition(opacity .5s ease-out);
+                @include opacity(1);
+                @include translate(-50%, -50%);
+            }
+
+            &:hover {
+                svg { @include opacity(.5); }
+            }
+        }
+
+        .video-content {
+            .background-img {
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: 3;
+
+                @include full-absolute();
+                @include background-size(cover);
+            }
+
+            .iframe {
+                &.black {
+                    background-color: black;
+
+                    &:after {
+                        content: '';
+                        background-color: black;
+                        z-index: 2;
+
+                        @include opacity(1);
+                        @include transition(opacity 1s ease-out);
+                        @include full-absolute();
+                    }
+                }
+
+                &.black.opacity-hide {
+                    &:after { @include opacity(0); }
+                }
+
+                iframe {
+                    z-index: 1;
+
+                    @include opacity(0);
+                    @include transition(opacity 1s ease-out);
+                    @include full-absolute();
+                }
+
+                &.active {
+                    iframe { @include opacity(1); }
+                }
+            }
+        }
+
+        .text-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $blue;
+            width: auto;
+            padding: 25px 50px 25px 100px;
+            text-align: right;
+            z-index: 4;
+            margin-left: 0;
+
+            h4 {
+                font-size: 2em;
+                line-height: 1.2;
+                color: white;
+                padding-bottom: 2px;
+            }
+
+            p {
+                font-size: 14px;
+                color: white;
+                margin: 0;
+            }
+        }
+
+        .play,
+        .video-content .background-img {
+            @include opacity(1);
+            @include transition(opacity 1s ease-out);
+        }
+
+        .text-content {
+            margin-left: 0;
+            @include transition(margin-left 1s ease-out);
+        }
+
+        .play.opacity-hide,
+        .video-content .background-img.opacity-hide {
+            @include opacity(0);
+        }
+
+        .text-content.margin-left {
+            margin-left: -100%;
+        }
+
+        .play.hide,
+        .video-content .background-img.hide,
+        .text-content.hide {
+            display: none;
+        }
+
+        @media screen and (max-width: $tablet) {
+            .text-content {
+                padding: 10px 30px 15px;
+                max-width: none;
+                width: auto;
+            }
+
+            .play {
+                svg { width: 42px; height: 42px; }
+            }
+        }
+
+        @media only screen and (max-width: $mobile) {
+            .text-content {
+                padding: 10px 15px;
+                max-width: 100%;
+
+                h4 { font-size: 1.1em; }
+
+                p {
+                    white-space: nowrap; 
+                    width: 100%; 
+                    overflow: hidden;
+                    text-overflow: ellipsis;  
+                }
+            }
+
+            .play {
+                svg { width: 32px; height: 32px; }
+            }
+        }
+
+        @media only screen and (max-width: $sMobile) {
+            .play {
+                svg { top: 40%; }
+            }
+        }
+    }
+}

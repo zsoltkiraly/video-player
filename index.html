@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>Video player v1.0.5 by Zsolt Kiraly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Video player<span>JavaScript Video player v1.0.5 by Zsolt Kiraly</span></h1>
+    </header>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
+    </section>
+
+
+	<section id="video-player-1" class="video-player">
+		<div class="video-wrapper">
+
+            <div class="play">
+                <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+                    <polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+                </svg>
+            </div>
+
+            <div class="video-content">
+                <div class="background-img" style="background-image:url(images/1.jpg)"></div>
+                <div class="iframe black"></div>
+            </div>
+
+            <div class="text-content">
+                <h4>A Quiet Place</h4>
+                <p>Description lorem ipsum dolor sit amet</p>
+            </div>
+		</div>
+	</section>
+
+	<script>
+        window.addEventListener('load', function() {
+			responsiveIframeVideo.app(
+				config = {
+					boxContainer: 'video-player-1',
+					videoPlayer: 'www.youtube.com',
+					iframeSrc: 'https://www.youtube.com/embed/WR7cc5t7tv8',
+					setParamters: '?autoplay=1',
+					aspectratio: 56.25
+				}
+			);
+        }, false);
+	</script>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
+    </section>
+
+	<section id="video-player-2" class="video-player">
+		<div class="video-wrapper">
+			
+	        <div class="play">
+	            <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+	                <circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+	                <polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+	            </svg>
+	        </div>
+
+	        <div class="video-content">
+	            <div class="background-img" style="background-image:url(images/2.jpg)"></div>
+	            <div class="iframe black"></div>
+	        </div>
+
+	        <div class="text-content">
+	            <h4>What Happened to Monday</h4>
+	            <p>Fusce turpis turpis vulputate et nibh in</p>
+	        </div>
+
+		</div>
+	</section>
+
+	<script>
+        window.addEventListener('load', function() {
+			responsiveIframeVideo.app(
+				config = {
+					boxContainer: 'video-player-2',
+					videoPlayer: 'player.vimeo.com',
+					iframeSrc: 'https://player.vimeo.com/video/230125884',
+					setParamters: '?autoplay=1',
+					aspectratio: 56.25,
+				}
+			);
+        }, false);
+	</script>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
+    </section>
+
+	<section id="video-player-3" class="video-player">
+		<div class="video-wrapper">
+			
+	        <div class="play">
+	            <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+	                <circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+	                <polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+	            </svg>
+	        </div>
+
+	        <div class="video-content">
+	            <div class="background-img" style="background-image:url(images/3.jpg)"></div>
+	            <div class="iframe black"></div>
+	        </div>
+
+	        <div class="text-content">
+	            <h4>Darkest Hour</h4>
+	            <p>Vitae elementum nisi tincidunt sit amet</p>
+	        </div>
+	        
+		</div>
+	</section>
+
+	<script>
+        window.addEventListener('load', function() {
+			responsiveIframeVideo.app(
+				config = {
+					boxContainer: 'video-player-3',
+					videoPlayer: 'www.youtube.com',
+					iframeSrc: 'https://www.youtube.com/embed/eFFj2gS9UWs',
+					setParamters: '?autoplay=1',
+					aspectratio: 56.25
+				}
+			);
+        }, false);
+	</script>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
+    </section>
+
+    <footer>
+        <span>GitHub:</span> <a href="https://github.com/zsoltkiraly" title="GitHub" target="_blank">https://github.com/zsoltkiraly</a>
+    </footer>
+
+</body>
+</html>
