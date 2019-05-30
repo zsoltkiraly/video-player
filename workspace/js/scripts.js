@@ -63,12 +63,8 @@ var responsiveIframeVideo = function() {
         return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     }
 
-    function findAncestor(el, cls) {
-        while ((el = el.parentElement) && !el.classList.contains(cls));
-        return el;
-    }
 
-    function setAspectratio(i, c) {
+    function _setAspectratio(i, c) {
         var video = i.querySelector('iframe[src*="' + c.videoPlayer + '"]'),
             videoWrapper = i.querySelector('.video-wrapper');
 
@@ -85,10 +81,12 @@ var responsiveIframeVideo = function() {
         }
     }
 
-    function youtube(i, c) {
+    function _videoPlayer(i, c) {
         var video = i.querySelector('iframe[src*="' + c.videoPlayer + '"]');
 
-        var newWidth = findAncestor(video, 'video-wrapper').offsetWidth;
+        console.log(video)
+
+        var newWidth = video.closest('.video-wrapper').offsetWidth;
 
         if(newWidth) {
             video.setAttribute('width', newWidth);
@@ -96,7 +94,7 @@ var responsiveIframeVideo = function() {
         }
     }
 
-    function embedVideo(i, c) {
+    function _embedVideo(i, c) {
         var videoPlay = document.querySelector('#' + c.boxContainer + '');
 
         if(videoPlay) {
@@ -107,6 +105,10 @@ var responsiveIframeVideo = function() {
                     backgroundImg = videoWrapper.querySelector('.video-content .background-img'),
                     textContent = videoWrapper.querySelector('.text-content'),
                     iframeClass = videoWrapper.querySelector('.iframe');
+
+
+                iframeClass.innerHTML = '<iframe src="' + c.iframeSrc + '" width="100%" height="100%" frameborder="0" allowfullscreen="" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+
 
                 play.addEventListener('click', function() {
 
@@ -144,18 +146,18 @@ var responsiveIframeVideo = function() {
         if(id) {
             var cachedWidth = getWidth();
 
-            embedVideo(id, c);
-            youtube(id, c);
+            _embedVideo(id, c);
+            _videoPlayer(id, c);
 
             window.addEventListener('resize', function() {
                 var newWidth = getWidth();
 
                 if(newWidth !== cachedWidth) {
-                    youtube(id, c);
+                    _videoPlayer(id, c);
                 }
             }, false);
 
-            setAspectratio(id, c);
+            _setAspectratio(id, c);
         }
     }
 
