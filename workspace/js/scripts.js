@@ -1,6 +1,6 @@
 /*
 Video player - Code by Zsolt Király
-v1.0.5 - 2018-02-24
+v1.0.6 - 2019-05-30
 */
 
 'use strict';
