@@ -49,23 +49,14 @@ var responsiveIframeVideo = function() {
         } catch (ex) {}
     }
     
-    var forEach = function(array, callback, scope) {
-        var i = 0,
-            len = array.length;
-        if (len > 0) {
-            for (; i < len; i++) {
-                callback.call(scope, i, array[i]);
-            }
-        }
-    }
-    
-    function getWidth() {
+
+    function _getWidth() {
         return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     }
 
 
     function _setAspectratio(i, c) {
-        var video = i.querySelector('iframe[src*="' + c.videoPlayer + '"]'),
+        const video = i.querySelector('iframe[src*="' + c.videoPlayer + '"]'),
             videoWrapper = i.querySelector('.video-wrapper');
 
         videoWrapper.style.paddingBottom = c.aspectratio + '%';
@@ -82,53 +73,53 @@ var responsiveIframeVideo = function() {
     }
 
     function _videoPlayer(i, c) {
-        var video = i.querySelector('iframe[src*="' + c.videoPlayer + '"]');
-
-        console.log(video)
-
-        var newWidth = video.closest('.video-wrapper').offsetWidth;
+        const video = i.querySelector('iframe[src*="' + c.videoPlayer + '"]'),
+            newWidth = video.closest('.video-wrapper').offsetWidth;
 
         if(newWidth) {
+
             video.setAttribute('width', newWidth);
             video.setAttribute('height', newWidth * parseFloat(video.getAttribute('data-aspectratio')));
         }
     }
 
     function _embedVideo(i, c) {
-        var videoPlay = document.querySelector('#' + c.boxContainer + '');
+
+        const videoPlay = document.querySelector('#' + c.boxContainer + '');
 
         if(videoPlay) {
-            var play = videoPlay.querySelector('.play');
+
+            const play = videoPlay.querySelector('.play');
 
             if(play) {
-                var videoWrapper = i.querySelector('.video-wrapper'),
+
+                const videoWrapper = i.querySelector('.video-wrapper'),
                     backgroundImg = videoWrapper.querySelector('.video-content .background-img'),
                     textContent = videoWrapper.querySelector('.text-content'),
                     iframeClass = videoWrapper.querySelector('.iframe');
 
-
                 iframeClass.innerHTML = '<iframe src="' + c.iframeSrc + '" width="100%" height="100%" frameborder="0" allowfullscreen="" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
-
                 play.addEventListener('click', function() {
-
-                    var obj = this;
 
                     iframeClass.innerHTML = '<iframe src="' + c.iframeSrc + c.setParamters + '" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
                     textContent.classList.add('margin-left');
                     iframeClass.classList.add('active');
 
-                    setTimeout(function() {
-                        obj.classList.add('opacity-hide');
+                    setTimeout(() => {
+
+                        this.classList.add('opacity-hide');
                         backgroundImg.classList.add('opacity-hide');
 
-                        setTimeout(function() {
+                        setTimeout(() => {
+
                             iframeClass.classList.add('opacity-hide');
                         }, 50);
 
-                        setTimeout(function() {
-                            obj.classList.add('hide');
+                        setTimeout(() => {
+
+                            this.classList.add('hide');
                             textContent.classList.add('hide');
                             backgroundImg.classList.add('hide');
                             iframeClass.classList.remove('black');
@@ -141,16 +132,16 @@ var responsiveIframeVideo = function() {
     }
 
     function app(c) {
-        var id = document.querySelector('#' + c.boxContainer + '');
+        const id = document.querySelector('#' + c.boxContainer + '');
 
         if(id) {
-            var cachedWidth = getWidth();
+            var cachedWidth = _getWidth();
 
             _embedVideo(id, c);
             _videoPlayer(id, c);
 
             window.addEventListener('resize', function() {
-                var newWidth = getWidth();
+                var newWidth = _getWidth();
 
                 if(newWidth !== cachedWidth) {
                     _videoPlayer(id, c);

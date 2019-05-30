@@ -25,40 +25,79 @@
         <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
     </section>
 
+	<section class="demo-area">
+		<div class="left">
+			<section id="video-player-4" class="video-player">
+				<div class="video-wrapper">
+		
+					<div class="play">
+						<svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+							<circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+							<polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+						</svg>
+					</div>
+		
+					<div class="video-content">
+						<div class="background-img" style="background-image:url(images/4.jpg)"></div>
+						<div class="iframe black"></div>
+					</div>
+		
+					<div class="text-content">
+						<h4>Hobbs & Shaw</h4>
+						<p>Dblandit metus elementum at escription amet</p>
+					</div>
+				</div>
+			</section>
 
-	<section id="video-player-1" class="video-player">
-		<div class="video-wrapper">
-
-            <div class="play">
-                <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
-                    <circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
-                    <polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
-                </svg>
-            </div>
-
-            <div class="video-content">
-                <div class="background-img" style="background-image:url(images/1.jpg)"></div>
-                <div class="iframe black"></div>
-            </div>
-
-            <div class="text-content">
-                <h4>A Quiet Place</h4>
-                <p>Description lorem ipsum dolor sit amet</p>
-            </div>
+			<script>
+				window.addEventListener('load', function() {
+					responsiveIframeVideo.app({
+						boxContainer: 'video-player-4',
+						videoPlayer: 'www.youtube.com',
+						iframeSrc: 'https://www.youtube.com/embed/kLA96VHXraw',
+						setParamters: '?autoplay=1',
+						aspectratio: 56.25
+					});
+				}, false);
+			</script>
+		</div>
+		<div class="right">
+			<section id="video-player-2" class="video-player">
+				<div class="video-wrapper">
+					
+					<div class="play">
+						<svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+							<circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+							<polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+						</svg>
+					</div>
+		
+					<div class="video-content">
+						<div class="background-img" style="background-image:url(images/2.jpg)"></div>
+						<div class="iframe black"></div>
+					</div>
+		
+					<div class="text-content">
+						<h4>What Happened to Monday</h4>
+						<p>Fusce turpis turpis vulputate et nibh in</p>
+					</div>
+		
+				</div>
+			</section>
+		
+			<script>
+				window.addEventListener('load', function() {
+					responsiveIframeVideo.app({
+						boxContainer: 'video-player-2',
+						videoPlayer: 'player.vimeo.com',
+						iframeSrc: 'https://player.vimeo.com/video/230125884',
+						setParamters: '?autoplay=1',
+						aspectratio: 56.25,
+					});
+				}, false);
+			</script>
 		</div>
 	</section>
-
-	<script>
-        window.addEventListener('load', function() {
-			responsiveIframeVideo.app({
-				boxContainer: 'video-player-1',
-				videoPlayer: 'www.youtube.com',
-				iframeSrc: 'https://www.youtube.com/embed/WR7cc5t7tv8',
-				setParamters: '?autoplay=1',
-				aspectratio: 56.25
-			});
-        }, false);
-	</script>
 
     <section class="basic-content">
         <h2>Sed et volutpat ligula</h2>
@@ -69,41 +108,6 @@
         <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
     </section>
 
-	<section id="video-player-2" class="video-player">
-		<div class="video-wrapper">
-			
-	        <div class="play">
-	            <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
-	                <circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
-	                <polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
-	            </svg>
-	        </div>
-
-	        <div class="video-content">
-	            <div class="background-img" style="background-image:url(images/2.jpg)"></div>
-	            <div class="iframe black"></div>
-	        </div>
-
-	        <div class="text-content">
-	            <h4>What Happened to Monday</h4>
-	            <p>Fusce turpis turpis vulputate et nibh in</p>
-	        </div>
-
-		</div>
-	</section>
-
-	<script>
-        window.addEventListener('load', function() {
-			responsiveIframeVideo.app({
-				boxContainer: 'video-player-2',
-				videoPlayer: 'player.vimeo.com',
-				iframeSrc: 'https://player.vimeo.com/video/230125884',
-				setParamters: '?autoplay=1',
-				aspectratio: 56.25,
-			});
-        }, false);
-	</script>
-
     <section class="basic-content">
         <h2>Sed et volutpat ligula</h2>
         <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
@@ -113,40 +117,79 @@
         <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
     </section>
 
-	<section id="video-player-3" class="video-player">
-		<div class="video-wrapper">
-			
-	        <div class="play">
-	            <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
-	                <circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
-	                <polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
-	            </svg>
-	        </div>
-
-	        <div class="video-content">
-	            <div class="background-img" style="background-image:url(images/3.jpg)"></div>
-	            <div class="iframe black"></div>
-	        </div>
-
-	        <div class="text-content">
-	            <h4>Darkest Hour</h4>
-	            <p>Vitae elementum nisi tincidunt sit amet</p>
-	        </div>
-	        
+	<section class="demo-area">
+		<div class="left">
+			<section id="video-player-3" class="video-player">
+				<div class="video-wrapper">
+					
+					<div class="play">
+						<svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+							<circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+							<polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+						</svg>
+					</div>
+		
+					<div class="video-content">
+						<div class="background-img" style="background-image:url(images/3.jpg)"></div>
+						<div class="iframe black"></div>
+					</div>
+		
+					<div class="text-content">
+						<h4>Darkest Hour</h4>
+						<p>Vitae elementum nisi tincidunt sit amet</p>
+					</div>
+					
+				</div>
+			</section>
+		
+			<script>
+				window.addEventListener('load', function() {
+					responsiveIframeVideo.app({
+						boxContainer: 'video-player-3',
+						videoPlayer: 'www.youtube.com',
+						iframeSrc: 'https://www.youtube.com/embed/eFFj2gS9UWs',
+						setParamters: '?autoplay=1',
+						aspectratio: 56.25
+					});
+				}, false);
+			</script>
 		</div>
+		<div class="right">
+			<section id="video-player-1" class="video-player">
+					<div class="video-wrapper">
+			
+						<div class="play">
+							<svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+								<circle cx="100" cy="100" r="90" fill="none" stroke-width="20" stroke="#61dafb"/>
+								<polygon points="70, 55 70, 145 145, 100" fill="#61dafb"/>
+							</svg>
+						</div>
+			
+						<div class="video-content">
+							<div class="background-img" style="background-image:url(images/1.jpg)"></div>
+							<div class="iframe black"></div>
+						</div>
+			
+						<div class="text-content">
+							<h4>A Quiet Place</h4>
+							<p>Description lorem ipsum dolor sit amet</p>
+						</div>
+					</div>
+				</section>
+	
+				<script>
+					window.addEventListener('load', function() {
+						responsiveIframeVideo.app({
+							boxContainer: 'video-player-1',
+							videoPlayer: 'www.youtube.com',
+							iframeSrc: 'https://www.youtube.com/embed/WR7cc5t7tv8',
+							setParamters: '?autoplay=1',
+							aspectratio: 56.25
+						});
+					}, false);
+				</script>
+			</div>
 	</section>
-
-	<script>
-        window.addEventListener('load', function() {
-			responsiveIframeVideo.app({
-				boxContainer: 'video-player-3',
-				videoPlayer: 'www.youtube.com',
-				iframeSrc: 'https://www.youtube.com/embed/eFFj2gS9UWs',
-				setParamters: '?autoplay=1',
-				aspectratio: 56.25
-			});
-        }, false);
-	</script>
 
     <section class="basic-content">
         <h2>Sed et volutpat ligula</h2>
