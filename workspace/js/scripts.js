@@ -1,45 +1,67 @@
-'use strict';
-
-function hasTouch() {
-    return 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-}
-
-if (hasTouch()) {
-    try {
-        for (var si in document.styleSheets) {
-            var styleSheet = document.styleSheets[si];
-            if (!styleSheet.rules) continue;
-
-            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-                if (!styleSheet.rules[ri].selectorText) continue;
-
-                if (styleSheet.rules[ri].selectorText.match(':hover')) {
-                    styleSheet.deleteRule(ri);
-                }
-            }
-        }
-    } catch (ex) {}
-}
-
-var forEach = function(array, callback, scope) {
-    var i = 0,
-        len = array.length;
-    if (len > 0) {
-        for (; i < len; i++) {
-            callback.call(scope, i, array[i]);
-        }
-    }
-}
-
-function getWidth() {
-    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-}
-
 /*
 Video player - Code by Zsolt Király
 v1.0.5 - 2018-02-24
 */
+
+'use strict';
 var responsiveIframeVideo = function() {
+
+    function signatura() {
+        if (window['console']) {
+            const text = {
+                black: '%c     ',
+                blue: '%c   ',
+                author: '%c  Zsolt Király  ',
+                github: '%c  https://zsoltkiraly.com/'
+            }
+
+            const style = {
+                black: 'background: #282c34',
+                blue: 'background: #61dafb',
+                author: 'background: black; color: white',
+                github: ''
+            }
+
+            console.log(text.black + text.blue + text.author + text.github, style.black, style.blue, style.author, style.github);
+        }
+    }
+
+    signatura();
+
+    function hasTouch() {
+        return 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    }
+    
+    if (hasTouch()) {
+        try {
+            for (var si in document.styleSheets) {
+                var styleSheet = document.styleSheets[si];
+                if (!styleSheet.rules) continue;
+    
+                for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                    if (!styleSheet.rules[ri].selectorText) continue;
+    
+                    if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                        styleSheet.deleteRule(ri);
+                    }
+                }
+            }
+        } catch (ex) {}
+    }
+    
+    var forEach = function(array, callback, scope) {
+        var i = 0,
+            len = array.length;
+        if (len > 0) {
+            for (; i < len; i++) {
+                callback.call(scope, i, array[i]);
+            }
+        }
+    }
+    
+    function getWidth() {
+        return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    }
 
     function findAncestor(el, cls) {
         while ((el = el.parentElement) && !el.classList.contains(cls));
@@ -83,20 +105,14 @@ var responsiveIframeVideo = function() {
             if(play) {
                 var videoWrapper = i.querySelector('.video-wrapper'),
                     backgroundImg = videoWrapper.querySelector('.video-content .background-img'),
-                    iframe = videoWrapper.querySelector('.video-content .iframe'),
                     textContent = videoWrapper.querySelector('.text-content'),
-                    iframeClass = videoWrapper.querySelector('.iframe'),
-                    iframe = iframeClass.querySelector('iframe');
-
-                iframeClass.innerHTML = '<iframe src="' + c.iframeSrc + c.setParamters + '" width="100%" height="100%" frameborder="0" allowfullscreen="" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                    iframeClass = videoWrapper.querySelector('.iframe');
 
                 play.addEventListener('click', function() {
 
-                    var obj = this,
-                        videoWrapper = findAncestor(obj, 'video-wrapper'),
-                        iframeSrcNew = videoWrapper.querySelector('iframe').getAttribute('src');
+                    var obj = this;
 
-                    iframeClass.innerHTML = '<iframe src="' + iframeSrcNew + '" width="100%" height="100%" frameborder="0" allowfullscreen="" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                    iframeClass.innerHTML = '<iframe src="' + c.iframeSrc + c.setParamters + '" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
                     textContent.classList.add('margin-left');
                     iframeClass.classList.add('active');
